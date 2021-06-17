@@ -1,50 +1,27 @@
 import { FC } from "react";
 import styled from "styled-components";
-import boxProperty from "../fp/boxProperty";
 import remsize from "../fp/remsize";
-import { NavLink } from "react-router-dom";
+import { ArrowForward } from "@material-ui/icons";
+import displayFlex from "../fp/displayFlex";
+import boxProperty from "../fp/boxProperty";
 
 const Container = styled.div`
-  width: 100%;
-  height: ${remsize(70)};
-  background: white;
-`;
-
-const H3 = styled.h3`
-  color: red;
-  text-align: center;
-`;
-
-const H4 = styled.h4`
+  ${boxProperty(remsize(250), remsize(40), 0, 0, "skyblue")};
+  border-radius: 10px;
+  color: white;
+  ${displayFlex(`center`, "center", "row wrap ")};
   font-size: 0.9rem;
   text-align: center;
-`;
-
-const DIV = styled.div`
-  ${boxProperty(`200px`, "30px", "auto", 0, `purple`)};
-  color: white;
-  position: relative;
-  bottom: 23px;
-  border-radius: 20px;
-
-  p {
-    position: relative;
-    bottom: 21px;
-    text-align: center;
-    font-size: 8px;
-  }
+  letter-spacing: 2px;
 `;
 
 const SignupLink: FC = () => (
-  <NavLink to="/signup">
+  <a href="https://rechargeandgetpaid.com/register.php?username=onyibacollins1">
     <Container>
-      <H3>Take Action!</H3>
-      <DIV>
-        <H4>GET STARTED NOW!</H4>
-        <p>CKICK HERE!</p>
-      </DIV>
+      Register Now
+      <ArrowForward />
     </Container>
-  </NavLink>
+  </a>
 );
 
 export default SignupLink;
